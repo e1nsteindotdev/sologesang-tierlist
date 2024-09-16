@@ -2,7 +2,7 @@ import { twMerge } from "tailwind-merge";
 
 export function StarIcon({ className, color }: { className?: string, color?: string }) {
    return (
-      <div className={twMerge(`text-${color}`, className)}>
+      <div className={twMerge(`${color}`, className)}>
          <svg
             width="100%"
             height="100%"

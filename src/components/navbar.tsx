@@ -45,6 +45,7 @@ export function Navbar() {
           if (dimenstions && (e.clientX < dimenstions.left || e.clientX > dimenstions.right || e.clientY > dimenstions.top || e.clientY < dimenstions.bottom)) {
             modalRef?.current?.classList.add('close'); // run animation here
             modalRef?.current?.close();
+            setTriggerMenu(false);
           }
         }}
       >
@@ -82,18 +83,18 @@ export function Navbar() {
     <div className={twMerge(
       "flex justify-between relative w-full items-center",
       "transform transition-all duration-500 translate-x-0",
-      "bg-primary-dark px-8 py-4 origin-left rounded-[24px]",
+      "bg-primary-dark px-6 md:px-8 py-3 md:py-4 origin-left rounded-[24px]",
       triggerMenu && "left-0 w-[calc(100%-84px)] right-0"
     )}>
 
-      <div className="flex center gap-2">
-        <div className={twMerge("hexagon flex center", `xl:w-[44px] xl:h-[48px]`, `bg-white`)}>
-          <div className={twMerge("hexagon center overflow-hidden", `w-[35px] h-[40px] md:w-[35px] md:h-[40px] xl:w-[36px] xl:h-[40px]`, `bg-gray-400`)}>
+      <a href={"https://www.twitch.tv/sologesang"} target={"_blank"} className="flex center gap-2">
+        <div className={twMerge("hexagon flex center", `w-[38px] h-[44px] md:w-[44px] md:h-[48px]`, `bg-white`)}>
+          <div className={twMerge("hexagon center overflow-hidden", `w-[31px] h-[35px] md:w-[35px] md:h-[40px] xl:w-[36px] xl:h-[40px]`, `bg-gray-400`)}>
             <Image src="/anime-avatar.png" alt="avatar" width={35} height={40} />
           </div>
         </div>
         <p className="text-[26px] hidden md:block font-[700] ">SOLOGESANG</p>
-      </div>
+      </a>
 
       <div className="relative">
 
