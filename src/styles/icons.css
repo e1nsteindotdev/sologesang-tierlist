@@ -1,0 +1,24 @@
+.icon {
+  @apply size-[28px] md:size-[28px] xl:size-[28px]
+}
+
+.icon.sm {
+  @apply size-[24px]
+}
+
+.icon.lg {
+  @apply size-[64px] md:size-[80px] xl:size-[64px]
+}
+
+.icon.rect {
+  @apply h-[24px] w-[32px] md:h-[32px] md:w-[44px] xl:h-[24px] xl:w-[32px]
+}
+
+.icon.rect.lg {
+  @apply h-[48px] w-[64px] md:h-[64px] md:w-[88px] xl:h-[48px] xl:w-[64px]
+}
+
+
+.hexagon {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
