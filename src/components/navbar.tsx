@@ -8,6 +8,8 @@ import { Seperator } from "./library/seperator";
 import { useState, useRef } from "react";
 import Icon from "../../public/icons/menu-icon.svg"
 import { Modal } from "./library/modal";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 
 
@@ -19,6 +21,18 @@ export function Navbar() {
 
   // modal that appears when the screen is small
   const firstLayerModal = useRef<HTMLDialogElement>(null)
+
+
+  useGSAP(() => {
+    gsap.fromTo('.navbar', {
+      y: -20,
+      opacity: 0,
+    },
+      {
+        y: 0,
+        opacity: 1,
+      });
+  }, [])
 
   // button componenet 
   function MenuButton({ children, className }: { className?: string, children: React.ReactNode }) {
@@ -78,7 +92,7 @@ export function Navbar() {
   }
 
   return <nav className={twMerge(
-    "flex w-full relative",
+    "flex w-full relative z-50 opacity-0", "navbar",
   )} >
     <div className={twMerge(
       "flex justify-between relative w-full items-center",
@@ -118,7 +132,7 @@ export function Navbar() {
         </Modal>
 
         <div className={twMerge(
-          "absolute opacity-0 left-[100%] flex-col ml-10 top-[-18px] bg-primary-dark border-[2px] border- rounded-[16px] items-start justify-start",
+          "absolute z-50 opacity-0 left-[100%] flex-col ml-10 top-[-18px] bg-primary-dark border-[2px] border- rounded-[16px] items-start justify-start",
           "transition-all transform translate-x-[150px] duration-500 ease-in-out",
           "border-[1px] border-[#844BFF] border-opacity-50",
           triggerMenu && "flex opacity-100 translate-x-0"

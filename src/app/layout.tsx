@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import "@/styles/icons.css";
+import "@/styles/tier-colors.css";
 import localFont from 'next/font/local'
 import { Montserrat } from "next/font/google"
 

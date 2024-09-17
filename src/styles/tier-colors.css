@@ -1,0 +1,46 @@
+.tier-s-border {
+  border-color: #2BDBA3;
+}
+
+.tier-a-border {
+
+  border-color: #E2FF04;
+}
+
+.tier-b-border {
+  border-color: #EE8A1F;
+}
+
+.tier-c-border {
+  border-color: #FF633D;
+}
+
+.tier-d-border {
+  border-color: #EDE6FE;
+}
+
+.neutral-star {
+  color: #6833D0;
+}
+
+
+.tier-s-text {
+  color: #2BDBA3;
+}
+
+.tier-a-text {
+
+  color: #E2FF04;
+}
+
+.tier-b-text {
+  color: #EE8A1F;
+}
+
+.tier-c-text {
+  color: #FF633D;
+}
+
+.tier-d-text {
+  color: #EDE6FE;
+}

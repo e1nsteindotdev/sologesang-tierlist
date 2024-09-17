@@ -4,8 +4,8 @@
 
 - [X] Deploy.
 - [X] make the tierlist ui.
-- [ ] make the tierlist ui responsive.
-- [ ] add tierlist animations.
+- [X] make the tierlist ui responsive.
+- [X] add tierlist animations.
 - [ ] make the comp ui.
 - [ ] make the comp ui responsive.
 - [ ] add animations to the comp ui. 

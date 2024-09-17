@@ -1,3 +1,4 @@
+"use client"
 import { twMerge } from "tailwind-merge";
 import { StarIcon } from "@/components/icons/StarIcon"
 import { TierIcon } from "./icons/TierIcon";
@@ -5,19 +6,45 @@ import Image from "next/image";
 import { TriangleIcon } from "./icons/TriangleIcon";
 import { TraitIcon } from "./icons/TraitIcon";
 import { getBorderColor, getTextColor, starColor } from "@/lib/tailwind-utils";
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
 
 export function TierList({ tier }: { tier: string }) {
   const tierDescription = "GREAT"
 
+
+  useGSAP(() => {
+    gsap.fromTo(".tier", {
+      x: -50,
+      opacity: 0
+    },
+      {
+        x: 0,
+        opacity: 1,
+        stagger: 0.1,
+        duration: 0.3,
+      }),
+
+      gsap.fromTo(".slot-box", {
+        opacity: 0,
+        x: 22,
+      },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.3,
+        })
+  }, [])
+
+
   function TierListSlot() {
-    const borderColor = `border-tier-${tier}`
-    return <div className={twMerge("relative")}>
+    return <div className={twMerge("relative opacity-0 slot-box")}>
 
       <div className={twMerge("absolute top-[-10px] left-[50%] transform translate-x-[-50%]  py-[6px] bg-[#2054FF] px-[6px] rounded-sm")}>
         <TriangleIcon className={"w-[12px] h-[12px]  "} />
       </div>
 
-      <Image src="/zoe.png" width={85} height={85} className={twMerge(`border-[7px]   rounded-[16px]`, getBorderColor(tier), borderColor)} alt="zoe" />
+      <Image src="/zoe.png" width={85} height={85} className={twMerge(`border-[7px]   rounded-[16px]`, getBorderColor(tier))} alt="zoe" />
 
       <div className={twMerge(
         "absolute bg-[#3F2082] py-[4.5px] px-[3.5px] rounded-[6px]",
@@ -31,7 +58,7 @@ export function TierList({ tier }: { tier: string }) {
   }
 
 
-  return <div className={twMerge("flex flex-col md:flex-row gap-3 w-full ")}>
+  return <div className={twMerge("tier", "flex opacity-0 flex-col md:flex-row gap-3 w-full ")}>
 
     <div className={twMerge("relative flex-1 center bg-primary-light rounded-[12px] min-w-[108px] pb-2 pt-4 md:py-0")}>
 
@@ -46,7 +73,7 @@ export function TierList({ tier }: { tier: string }) {
           <TierIcon tier={tier} />
         </div>
 
-        <p className={twMerge(`text-tier-${tier}`, " text-[20px] font-[800] uppercase")} >
+        <p className={twMerge(getTextColor(tier), " text-[20px] font-[800] uppercase")} >
           {tierDescription}
         </p>
       </div>
