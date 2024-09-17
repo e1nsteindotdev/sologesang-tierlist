@@ -12,7 +12,7 @@ export function getBorderColor(tier: string) {
     case "d":
       return "tier-d-border"
 
-  }FF633D
+  }
   /*  switch (tier) {
       case "a":
         return "text-tier-[#2BDBA3]"
