@@ -55,8 +55,9 @@ export function Navbar() {
         className="secondLayer"
         ref={modalRef}
         onClick={(e) => {
+          console.log("clicked ---------------------")
           const dimenstions = modalRef?.current?.getBoundingClientRect()
-          if (dimenstions && (e.clientX < dimenstions.left || e.clientX > dimenstions.right || e.clientY > dimenstions.top || e.clientY < dimenstions.bottom)) {
+          if (dimenstions && (e.clientX < dimenstions.left || e.clientX > dimenstions.right || e.clientY < dimenstions.top || e.clientY > dimenstions.bottom)) {
             modalRef?.current?.classList.add('close'); // run animation here
             modalRef?.current?.close();
             setTriggerMenu(false);
@@ -97,7 +98,7 @@ export function Navbar() {
     <div className={twMerge(
       "flex justify-between relative w-full items-center",
       "transform transition-all duration-500 translate-x-0",
-      "bg-primary-dark px-6 md:px-8 py-3 md:py-4 origin-left rounded-[24px]",
+      "bg-primary-dark px-6 md:px-8 py-3 md:py-3 origin-left rounded-[24px]",
       triggerMenu && "left-0 w-[calc(100%-84px)] right-0"
     )}>
 

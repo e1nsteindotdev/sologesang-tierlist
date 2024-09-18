@@ -57,3 +57,18 @@ dialog.secondLayer::backdrop {
 dialog.secondLayer[open] {
   animation: fadeIn 0.2s ease;
 }
+
+
+
+
+dialog.comp-modal::backdrop {
+  backdrop-filter: blur(16px);
+  animation: backdrop-filter-animation 0.1s forwards;
+  transition: opacity 0.5s ease;
+
+}
+
+
+dialog.comp-modal[open] {
+  animation: fadeIn 0.2s ease;
+}

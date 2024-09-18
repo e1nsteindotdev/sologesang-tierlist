@@ -14,7 +14,7 @@ export default {
 					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
+					DEFAULT: "#2C1081",
 					foreground: 'hsl(var(--secondary-foreground))'
 				},
 				background: 'hsl(var(--background))',
@@ -33,6 +33,7 @@ export default {
 				},
 				accent: {
 					1: "#EAB65C",
+					2: "#7F44FF",
 					DEFAULT: 'hsl(var(--accent))',
 					foreground: 'hsl(var(--accent-foreground))'
 				},
@@ -70,5 +71,16 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"),
+	function({ addUtilities }: { addUtilities: any }) {
+		addUtilities({
+			'.text-stroke': {
+				'-webkit-text-stroke': '1px black',
+			},
+			'.text-stroke-2': {
+				'-webkit-text-stroke': '2px black',
+			},
+		});
+	},
+	],
 } satisfies Config;

@@ -6,7 +6,7 @@
 - [X] make the tierlist ui.
 - [X] make the tierlist ui responsive.
 - [X] add tierlist animations.
-- [ ] make the comp ui.
+- [X] make the comp ui.
 - [ ] make the comp ui responsive.
 - [ ] add animations to the comp ui. 
 - [ ] Make the dashboard page and protect it with authentication.

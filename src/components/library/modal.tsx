@@ -1,16 +1,50 @@
-import { forwardRef } from "react"
-import type { ForwardedRef } from "react"
-
 import { twMerge } from "tailwind-merge"
 
-export const Modal = forwardRef<HTMLDialogElement, { children: React.ReactNode }>(Component)
+export const Modal2 = forwardRef<HTMLDialogElement, { children: React.ReactNode }>(Component)
 
-function Component(props: { children: React.ReactNode }, ref: ForwardedRef<HTMLDialogElement>) {
-  return <dialog ref={ref}
-    className={twMerge("firstLayer",
-      "fixed inset-y-0 right-0 h-screen w-3/4 border-black sm:max-w-sm",
-    )}
-  >
+function Component(props: { children?: React.ReactNode }, ref: React.Ref<HTMLDialogElement>) {
+  const typedRef = ref as RefObject<HTMLDialogElement>
+  return <dialog
+    data-modal
+    className="secondLayer"
+    onClick={(e) => {
+      const dimenstions = typedRef?.current?.getBoundingClientRect()
+      if (dimenstions && (e.clientX < dimenstions.left || e.clientX > dimenstions.right || e.clientY > dimenstions.top || e.clientY < dimenstions.bottom)) {
+        typedRef?.current?.classList.add('close'); // run animation here
+        typedRef?.current?.close();
+      }
+    }}
+    ref={ref}>
+
     {props?.children}
+
   </dialog>
 }
+import React, { forwardRef, RefObject, useEffect } from 'react';
+
+type MyComponentProps = {
+  children: React.ReactNode
+};
+
+export const Modal = forwardRef<HTMLDialogElement, MyComponentProps>((props, ref) => {
+  const dialogRef = ref as RefObject<HTMLDialogElement>;
+
+  return (
+    <dialog
+      data-modal
+      className="secondLayer"
+      onClick={(e) => {
+        const dimenstions = dialogRef?.current?.getBoundingClientRect()
+        if (dimenstions && (e.clientX < dimenstions.left || e.clientX > dimenstions.right || e.clientY > dimenstions.top || e.clientY < dimenstions.bottom)) {
+          dialogRef?.current?.classList.add('close'); // run animation here
+          dialogRef?.current?.close();
+        }
+      }}
+      ref={dialogRef}>
+
+      {props?.children}
+
+    </dialog>
+  );
+});
+
