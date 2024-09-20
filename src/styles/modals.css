@@ -72,3 +72,7 @@ dialog.comp-modal::backdrop {
 dialog.comp-modal[open] {
   animation: fadeIn 0.2s ease;
 }
+
+dialog:focus {
+  outline: none;
+}

@@ -8,7 +8,7 @@
 - [X] add tierlist animations.
 - [X] make the comp ui.
 - [ ] make the comp ui responsive.
-- [ ] add animations to the comp ui. 
+- [X] add animations to the comp ui. 
 - [ ] Make the dashboard page and protect it with authentication.
 - [ ] make the dashboard ui.
 - [ ] Connect the database with drizzle and understand how the dev/prod databases would behave.

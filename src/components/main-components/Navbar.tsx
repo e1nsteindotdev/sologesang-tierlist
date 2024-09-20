@@ -4,10 +4,10 @@ import "@/styles/modals.css";
 
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
-import { Seperator } from "./library/seperator";
+import { Seperator } from "../ui/Seperator";
 import { useState, useRef } from "react";
-import Icon from "../../public/icons/menu-icon.svg"
-import { Modal } from "./library/modal";
+import Icon from "../../../public/icons/menu-icon.svg"
+import { Modal } from "../ui/Modal";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
@@ -15,13 +15,10 @@ import gsap from "gsap";
 
 export function Navbar() {
   const [triggerMenu, setTriggerMenu] = useState(false);
-
   // modal that appears when you click on a menu button (ex. the about button) 
   const modalRef = useRef<HTMLDialogElement>(null)
-
   // modal that appears when the screen is small
   const firstLayerModal = useRef<HTMLDialogElement>(null)
-
 
   useGSAP(() => {
     gsap.fromTo('.navbar', {

@@ -2,7 +2,7 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap";
 import Image from "next/image"
-export function MiddleSection() {
+export function InfoSection() {
   useGSAP(() => {
     gsap.fromTo('.middle-section', {
       y: -20,

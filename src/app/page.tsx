@@ -1,6 +1,6 @@
-import { MiddleSection } from "@/components/middleSection";
-import { Navbar } from "@/components/navbar";
-import { TierList } from "@/components/tierlist";
+import { InfoSection } from "@/components/main-components/InfoSection";
+import { Navbar } from "@/components/main-components/Navbar";
+import { TierList } from "@/components/main-components/TierList";
 import Image from "next/image";
 
 export default function HomePage() {
@@ -13,7 +13,7 @@ export default function HomePage() {
 
       <div className="flex gap-[26px] w-full flex-col ">
 
-        <MiddleSection />
+        <InfoSection />
 
         <div className="flex w-full flex-1 flex-col gap-4">
           <TierList tier={"s"} />
